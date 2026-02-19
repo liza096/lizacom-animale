@@ -274,20 +274,5 @@
     </div>
   </div>
   
-  <!-- Script pour le compteur de redirection -->
-  <script>
-    let secondes = 8;
-    const compteurElement = document.getElementById('compteur');
-    
-    const interval = setInterval(() => {
-      secondes--;
-      compteurElement.textContent = secondes;
-      
-      if (secondes <= 0) {
-        clearInterval(interval);
-      }
-    }, 1000);
-  </script>
-  
 </body>
 </html>
