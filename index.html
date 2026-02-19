@@ -267,7 +267,7 @@
       display: flex;
       overflow: hidden;
       scroll-behavior: smooth;
-      gap: 0; /* Pas de gap, géré par le défilement */
+      gap: 0;
     }
     .testi-card {
       flex: 0 0 100%;
@@ -534,8 +534,14 @@
           <div class="form-container">
             <h4>📋 Formulaire animal perdu</h4>
             <form action="https://formsubmit.co/lizacommanimale90@gmail.com" method="POST" enctype="multipart/form-data">
-              <input type="hidden" name="subject" value="Demande ANIMAL PERDU">
-              <input type="hidden" name="captcha" value="false">
+              <!-- Paramètres réservés FormSubmit (AVEC underscores) -->
+              <input type="hidden" name="_subject" value="Demande ANIMAL PERDU">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://formsubmit.co/">
+              <input type="hidden" name="_honey" value="" style="display:none">
+              <input type="hidden" name="_template" value="table">
+              
+              <!-- Champs personnalisés (SANS underscores) -->
               <div class="form-group"><label>Nom complet du gardien *</label><input type="text" name="Nom_gardien" required></div>
               <div class="form-group"><label>Adresse *</label><input type="text" name="Adresse" required></div>
               <div class="form-group"><label>Pays *</label>
@@ -562,8 +568,14 @@
           <div class="form-container">
             <h4>📋 Contact pour communication (décédé / présent)</h4>
             <form action="https://formsubmit.co/lizacommanimale90@gmail.com" method="POST" enctype="multipart/form-data">
-              <input type="hidden" name="subjec" value="Demande COMMUNICATION ANIMALE">
-              <input type="hidden" name="captch" value="false">
+              <!-- Paramètres réservés FormSubmit (AVEC underscores) -->
+              <input type="hidden" name="_subject" value="Demande COMMUNICATION ANIMALE">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://formsubmit.co/">
+              <input type="hidden" name="_honey" value="" style="display:none">
+              <input type="hidden" name="_template" value="table">
+              
+              <!-- Champs personnalisés (SANS underscores) -->
               <div class="form-group"><label>Nom du gardien *</label><input type="text" name="Gardien" required></div>
               <div class="form-group"><label>Nom de l’animal *</label><input type="text" name="Animal" required></div>
               <div class="form-group"><label>Photo de l’animal</label><input type="file" name="Photo_animal_com" accept="image/*"></div>
@@ -731,7 +743,7 @@
       <h2><i class="fas fa-envelope-open-text"></i> Contact & échange</h2>
       <div class="contact-flex">
         <div class="contact-info">
-          <p><i class="fas fa-envelope" style="color:#7d9a79;"></i> lizacommanimal@gmail.com</p>
+          <p><i class="fas fa-envelope" style="color:#7d9a79;"></i> lizacommanimale90@gmail.com</p>
           <p><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/33773686025" target="_blank">+33 7 73 68 60 25</a></p>
           <p><i class="fas fa-clock"></i> Réponse sous 24h en général.</p>
           <div style="margin-top: 2rem;">
@@ -742,8 +754,14 @@
           <div class="form-container">
             <h4>Formulaire de contact simple</h4>
             <form action="https://formsubmit.co/lizacommanimale90@gmail.com" method="POST">
-              <input type="hidden" name="subje" value="Contact depuis site web">
-              <input type="hidden" name="captc" value="false">
+              <!-- Paramètres réservés FormSubmit (AVEC underscores) -->
+              <input type="hidden" name="_subject" value="Contact depuis site web">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://formsubmit.co/">
+              <input type="hidden" name="_honey" value="" style="display:none">
+              <input type="hidden" name="_template" value="table">
+              
+              <!-- Champs personnalisés (SANS underscores) -->
               <div class="form-group"><input type="text" name="Nom" placeholder="Votre nom" required></div>
               <div class="form-group"><input type="email" name="Email" placeholder="Votre email" required></div>
               <div class="form-group"><textarea name="Message" rows="4" placeholder="Votre message..." required></textarea></div>
@@ -763,7 +781,7 @@
   <footer>
     <div class="container">
       <p><i class="fas fa-paw"></i> Liza communication animale – lien d’âme à âme <i class="fas fa-paw"></i></p>
-      <p>lizacommanimal@gmail.com | WhatsApp +33 7 73 68 60 25</p>
+      <p>lizacommanimale90@gmail.com | WhatsApp +33 7 73 68 60 25</p>
       <p class="mention">Sans base de données – vos messages sont envoyés par email de manière confidentielle.</p>
       <p class="mention">© 2025 – Tous droits réservés – site apaisant et professionnel</p>
     </div>
@@ -796,14 +814,12 @@
       
       // Fonction pour mettre à jour l'affichage
       function updateCarousel() {
-        // Défilement fluide
         const cardWidth = cards[0].offsetWidth;
         track.scrollTo({
           left: cardWidth * currentIndex,
           behavior: 'smooth'
         });
         
-        // Mettre à jour les points actifs
         dots.forEach((dot, index) => {
           if (index === currentIndex) {
             dot.classList.add('active');
@@ -813,7 +829,6 @@
         });
       }
       
-      // Aller à un slide spécifique
       function goToSlide(index) {
         if (index < 0) index = 0;
         if (index >= totalCards) index = totalCards - 1;
@@ -821,43 +836,37 @@
         updateCarousel();
       }
       
-      // Slide suivant
       function nextSlide() {
         if (currentIndex < totalCards - 1) {
           currentIndex++;
         } else {
-          currentIndex = 0; // Retour au début
+          currentIndex = 0;
         }
         updateCarousel();
       }
       
-      // Slide précédent
       function prevSlide() {
         if (currentIndex > 0) {
           currentIndex--;
         } else {
-          currentIndex = totalCards - 1; // Retour à la fin
+          currentIndex = totalCards - 1;
         }
         updateCarousel();
       }
       
-      // Écouteurs d'événements
       prevBtn.addEventListener('click', prevSlide);
       nextBtn.addEventListener('click', nextSlide);
       
-      // Recalculer la largeur au redimensionnement
       let resizeTimer;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-          updateCarousel(); // Recalcule la position sans changer l'index
+          updateCarousel();
         }, 100);
       });
       
-      // Initialisation
       dots[0]?.classList.add('active');
       
-      // Support tactile (swipe basique)
       let touchStartX = 0;
       let touchEndX = 0;
       
@@ -868,9 +877,9 @@
       track.addEventListener('touchend', (e) => {
         touchEndX = e.changedTouches[0].screenX;
         if (touchEndX < touchStartX - 50) {
-          nextSlide(); // Swipe gauche -> suivant
+          nextSlide();
         } else if (touchEndX > touchStartX + 50) {
-          prevSlide(); // Swipe droite -> précédent
+          prevSlide();
         }
       }, { passive: true });
     });
