@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liza Com. Animale – lien d’âme à âme</title>
+  <!-- SEO de base -->
+  <meta name="description" content="Communication animale intuitive, soins énergétiques, aide à retrouver un animal perdu. Bienveillance et professionnalisme.">
+  <meta name="keywords" content="communication animale, animal perdu, soins énergétiques animaux, deuil animal, télépathie animale">
+  <!-- Police & styles apaisants -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* RESET ET BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #fafaf7;
+      color: #3e4c3d;
+      line-height: 1.5;
+    }
+    /* ===== TYPOGRAPHIE ADAPTATIVE ===== */
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      color: #5f7e5e;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+      font-weight: 500;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: #6b8c6a;
+      border-left: 6px solid #c5d0bb;
+      padding-left: 1rem;
+      margin: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(1rem, 2vw, 1.5rem) 0;
+    }
+    h3 {
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      color: #4f6d4e;
+      margin: 1rem 0 0.8rem 0;
+    }
+    p {
+      margin-bottom: 1rem;
+      font-weight: 400;
+      color: #3f4e3e;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+    .container {
+      width: min(90%, 1200px);
+      margin: 0 auto;
+      padding: clamp(0.5rem, 2vw, 1.5rem);
+    }
+    /* BOUTONS ADAPTATIFS */
+    .btn {
+      display: inline-block;
+      background-color: #a7c0a3;
+      color: #2f3d2e;
+      padding: clamp(0.7rem, 2vw, 1.2rem) clamp(1.2rem, 3vw, 2.2rem);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: clamp(0.9rem, 2.2vw, 1.2rem);
+      border: 1px solid transparent;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 12px rgba(120, 140, 110, 0.15);
+      margin: 0.5rem 0.5rem 0.5rem 0;
+    }
+    .btn i {
+      margin-right: 0.5rem;
+    }
+    .btn:hover {
+      background-color: #8fae8b;
+      color: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 20px rgba(80, 100, 70, 0.25);
+    }
+    .btn-wa {
+      background-color: #25D366;
+      color: white;
+    }
+    .btn-wa:hover {
+      background-color: #20b859;
+    }
+    /* HEADER ADAPTATIF */
+    header {
+      background: #ffffffd9;
+      backdrop-filter: blur(4px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #d9d0c0;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(0.5rem, 2vw, 1rem) 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo a {
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 600;
+      color: #6f8f6d;
+      text-decoration: none;
+    }
+    .logo span {
+      font-weight: 300;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: #a78e7a;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: clamp(0.8rem, 2vw, 2rem);
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #4d604b;
+      font-weight: 500;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #b5c9b0;
+    }
+    /* WHATSAPP FLOTTANT ADAPTATIF */
+    .whatsapp-float {
+      position: fixed;
+      bottom: clamp(15px, 4vw, 30px);
+      right: clamp(15px, 4vw, 30px);
+      background-color: #25D366;
+      color: white;
+      width: clamp(50px, 10vw, 70px);
+      height: clamp(50px, 10vw, 70px);
+      border-radius: 50%;
+      text-align: center;
+      font-size: clamp(28px, 6vw, 38px);
+      line-height: clamp(50px, 10vw, 70px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+      z-index: 99;
+      transition: 0.25s;
+      border: 3px solid white;
+    }
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+    }
+    /* GRILLES SERVICES */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+      gap: clamp(1rem, 3vw, 2rem);
+      margin: clamp(1rem, 3vw, 2rem) 0;
+    }
+    .service-card {
+      background: white;
+      border-radius: clamp(20px, 4vw, 32px);
+      padding: clamp(1.2rem, 3vw, 2rem);
+      box-shadow: 0 12px 30px rgba(160, 150, 130, 0.1);
+      border: 1px solid #efe8dd;
+    }
+    /* PRIX */
+    .urgent-prices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(0.5rem, 2vw, 1rem);
+      justify-content: space-around;
+      margin: 1.5rem 0;
+    }
+    .price-box {
+      background: #f0ece2;
+      padding: clamp(0.5rem, 2vw, 0.8rem) clamp(0.8rem, 2vw, 1.2rem);
+      border-radius: 30px;
+      text-align: center;
+      min-width: min(100px, 25vw);
+      flex: 1 1 auto;
+    }
+    .price-box span {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+    .price-box strong {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      color: #8f6b4f;
+    }
+    .price-tag {
+      background: #d5e3d1;
+      border-radius: 40px;
+      padding: 0.3rem 1.2rem;
+      display: inline-block;
+      font-weight: 600;
+      color: #2f4d2e;
+      margin: 0.8rem 0;
+    }
+    /* FORMULAIRES */
+    .form-container {
+      background: #ffffffd9;
+      border-radius: clamp(20px, 4vw, 40px);
+      padding: clamp(1.2rem, 3vw, 2rem);
+      margin: clamp(1rem, 3vw, 2rem) 0;
+      border: 1px solid #e2d9cc;
+    }
+    .form-group {
+      margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    }
+    label {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      margin-bottom: 0.3rem;
+      display: block;
+      font-weight: 600;
+      color: #5b7259;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: clamp(10px, 2vw, 16px) clamp(12px, 2vw, 18px);
+      border-radius: 30px;
+      border: 1px solid #cfcaba;
+      background-color: #fefcf9;
+      font-family: 'Quicksand', sans-serif;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      transition: 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #9bbe92;
+      box-shadow: 0 0 0 3px #d4e8cf;
+    }
+    button[type="submit"] {
+      width: 100%;
+      background-color: #a7c0a3;
+      border: none;
+      padding: clamp(12px, 2vw, 18px) clamp(20px, 4vw, 40px);
+      border-radius: 50px;
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-weight: 600;
+      color: #2c402b;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 6px 12px #b6ccb1;
+    }
+    button[type="submit"]:hover {
+      background-color: #85a581;
+      color: white;
+    }
+    
+    /* ===== CAROUSEL TÉMOIGNAGES ===== */
+    .carousel-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 40px;
+    }
+    .carousel-track {
+      display: flex;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      gap: 0; /* Pas de gap, géré par le défilement */
+    }
+    .testi-card {
+      flex: 0 0 100%;
+      padding: 0 10px;
+      transition: transform 0.3s ease;
+    }
+    .testi {
+      background: white;
+      border-radius: 30px;
+      padding: clamp(1.5rem, 3vw, 2rem);
+      border-left: 10px solid #d2e0cb;
+      box-shadow: 0 8px 18px rgba(180, 170, 150, 0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .testi i.fa-quote-left {
+      color: #b7cdae;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.7;
+    }
+    .testi .stars {
+      color: #e6c27a;
+      margin: 0.4rem 0 0.6rem;
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+    .testi p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-style: italic;
+      flex-grow: 1;
+    }
+    .testi strong {
+      color: #6b4f3c;
+      display: block;
+      margin-top: 0.8rem;
+      font-weight: 600;
+    }
+    .testi-type {
+      display: inline-block;
+      background: #e4ddd0;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #4a5f48;
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      align-self: flex-start;
+    }
+    /* Boutons de navigation */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white;
+      border: 1px solid #ddd6c8;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+      z-index: 10;
+      color: #6b8c6a;
+      font-size: 1.4rem;
+    }
+    .carousel-btn:hover {
+      background: #a7c0a3;
+      color: white;
+      border-color: #a7c0a3;
+    }
+    .carousel-btn.prev {
+      left: -10px;
+    }
+    .carousel-btn.next {
+      right: -10px;
+    }
+    /* Indicateurs (points) */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 1.5rem;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #cfcaba;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .dot.active {
+      background: #6b8c6a;
+      transform: scale(1.3);
+    }
+    /* Media queries pour les petits écrans */
+    @media screen and (max-width: 768px) {
+      .carousel-container {
+        padding: 0 20px;
+      }
+      .carousel-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+      }
+    }
+    
+    /* SECTION À PROPOS */
+    .apropos-content {
+      display: flex;
+      gap: clamp(1rem, 4vw, 2.5rem);
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .apropos-text {
+      flex: 2 1 300px;
+    }
+    .photo-profil {
+      flex: 1 1 200px;
+      min-width: min(200px, 40vw);
+      height: clamp(180px, 30vw, 250px);
+      background: #c5bcac;
+      border-radius: 60% 40% 50% 50%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200"><circle cx="100" cy="80" r="40" fill="%23d9c8b5"/><circle cx="80" cy="70" r="6" fill="%233f2f1f"/><circle cx="120" cy="70" r="6" fill="%233f2f1f"/><path d="M80 110 Q100 135, 120 110" stroke="%23806758" stroke-width="6" fill="none"/><ellipse cx="100" cy="150" rx="50" ry="30" fill="%23b7aa93"/></svg>');
+      background-size: cover;
+      border: 6px solid #f0e7db;
+    }
+    .icon-paw {
+      color: #a4bb9c;
+      margin-right: 5px;
+    }
+    /* CONTACT */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(1rem, 4vw, 2.5rem);
+    }
+    .contact-info {
+      flex: 1 1 250px;
+    }
+    .contact-form {
+      flex: 2 1 300px;
+    }
+    /* FOOTER */
+    footer {
+      background-color: #dbd5c9;
+      padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+      margin-top: 3rem;
+      text-align: center;
+    }
+    footer p {
+      font-size: clamp(0.85rem, 2vw, 1rem);
+    }
+    .mention {
+      font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+    }
+    /* ICÔNES ANIMAUX */
+    .paw-icons {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1rem, 3vw, 2.5rem);
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      color: #acbaa4;
+      margin: clamp(1.5rem, 4vw, 3rem) 0;
+    }
+    
+    /* MEDIA QUERIES GÉNÉRALES */
+    @media screen and (max-width: 768px) {
+      .nav-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+      .btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+      .urgent-prices {
+        flex-direction: column;
+      }
+      .price-box {
+        width: 100%;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .container {
+        width: 95%;
+        padding: 0.5rem;
+      }
+      .nav-links {
+        justify-content: center;
+        gap: 0.8rem;
+      }
+      .nav-links a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/33773686025" class="whatsapp-float" target="_blank" title="Contact WhatsApp direct">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <header>
+    <div class="container nav-bar">
+      <div class="logo">
+        <a href="#accueil">Liza Com. Animale</a>
+        <span><i class="fas fa-paw icon-paw"></i> lien d’âme à âme</span>
+      </div>
+      <div class="nav-links">
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ACCUEIL -->
+    <section id="accueil" style="padding-top: 1rem;">
+      <div class="container">
+        <div style="background: #e9efe5; border-radius: clamp(30px, 6vw, 70px); padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem); background-image: radial-gradient(circle at 100% 0%, #f3efe7 0%, #e1e9da 100%);">
+          <h1>Communication animale <br>– Lien d’âme à âme</h1>
+          <p style="font-size: clamp(1.2rem, 3vw, 1.6rem); max-width: 700px;">Retrouver un animal perdu · communication · soins énergétiques · deuil</p>
+          <div style="margin: clamp(1.5rem, 3vw, 2.5rem) 0;">
+            <a href="#animal-perdu" class="btn"><i class="fas fa-paw"></i> Retrouver un animal perdu</a>
+            <a href="#communication-defunt" class="btn"><i class="fas fa-dove"></i> Communication</a>
+            <a href="#soins" class="btn"><i class="fas fa-spa"></i> Soins énergétiques</a>
+            <a href="https://wa.me/33773686025" class="btn btn-wa" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp direct</a>
+          </div>
+          <!-- mini témoignage -->
+          <div style="background: #fff8f0; border-radius: 50px; padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.2rem, 3vw, 2rem); display: inline-block; border: 1px solid #cdc3b2;">
+            <i class="fas fa-star" style="color: #cab572;"></i><i class="fas fa-star" style="color: #cab572;"></i><i class="fas fa-star" style="color: #cab572;"></i><i class="fas fa-star" style="color: #cab572;"></i><i class="fas fa-star" style="color: #cab572;"></i>
+            <em style="font-size: clamp(0.9rem, 2vw, 1.1rem);">“Grâce à Liza, j’ai retrouvé mon chat en 6h. Un véritable miracle.”</em>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="container">
+      <h2><i class="fas fa-feather-alt"></i> Services & accompagnement</h2>
+      <div class="service-grid">
+        <!-- service perdu -->
+        <div class="service-card" id="animal-perdu">
+          <h3><i class="fas fa-map-signs"></i> Retrouver un animal perdu</h3>
+          <p>Aide intuitive pour localiser votre compagnon disparu. Intervention rapide.</p>
+          <div class="urgent-prices">
+            <div class="price-box"><span>⏳ 6h</span> <strong>350€</strong></div>
+            <div class="price-box"><span>⏳ 12h</span> <strong>230€</strong></div>
+            <div class="price-box"><span>⏳ 24h</span> <strong>130€</strong></div>
+          </div>
+          <div class="form-container">
+            <h4>📋 Formulaire animal perdu</h4>
+            <form action="https://formsubmit.co/lizacommanimal@gmail.com" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_subject" value="Demande ANIMAL PERDU">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="form-group"><label>Nom complet du gardien *</label><input type="text" name="Nom_gardien" required></div>
+              <div class="form-group"><label>Adresse *</label><input type="text" name="Adresse" required></div>
+              <div class="form-group"><label>Pays *</label>
+                <select name="Pays" required>
+                  <option value="">--Sélectionnez--</option>
+                  <option>Belgique</option>
+                  <option>France</option>
+                  <option>Suisse</option>
+                </select>
+              </div>
+              <div class="form-group"><label>Nom de l’animal *</label><input type="text" name="Nom_animal" required></div>
+              <div class="form-group"><label>Date de disparition *</label><input type="date" name="Date_disparition" required></div>
+              <div class="form-group"><label>Photo de l’animal *</label><input type="file" name="Photo_animal" accept="image/*" required></div>
+              <div class="form-group"><label>Description détaillée *</label><textarea name="Description" rows="4" required></textarea></div>
+              <button type="submit">Envoyer la demande</button>
+            </form>
+          </div>
+        </div>
+        <!-- service décédés -->
+        <div class="service-card" id="communication-defunt">
+          <h3><i class="fas fa-feather"></i> Communication avec les animaux décédés</h3>
+          <p>Transmission de messages, accompagnement du deuil, apaisement émotionnel.</p>
+          <div class="price-tag">💫 Don libre – minimum 50€</div>
+          <div class="form-container">
+            <h4>📋 Contact pour communication (décédé / présent)</h4>
+            <form action="https://formsubmit.co/lizacommanimal@gmail.com" method="POST" enctype="multipart/form-data">
+              <input type="hidden" name="_subject" value="Demande COMMUNICATION ANIMALE">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="form-group"><label>Nom du gardien *</label><input type="text" name="Gardien" required></div>
+              <div class="form-group"><label>Nom de l’animal *</label><input type="text" name="Animal" required></div>
+              <div class="form-group"><label>Photo de l’animal</label><input type="file" name="Photo_animal_com" accept="image/*"></div>
+              <div class="form-group"><label>Questions / messages *</label><textarea name="Message" rows="4" required></textarea></div>
+              <button type="submit">Envoyer</button>
+            </form>
+          </div>
+        </div>
+        <!-- service soins -->
+        <div class="service-card" id="soins">
+          <h3><i class="fas fa-spa"></i> Soins énergétiques</h3>
+          <p>Apaisement du stress, anxiété, peurs, troubles émotionnels et comportementaux.</p>
+          <div class="price-tag">💫 Don libre (suggest. 50€)</div>
+          <p><em>Utilisez le formulaire "communication" ou contactez-moi directement.</em></p>
+          <a href="#contact" class="btn">Me contacter pour un soin</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÉMOIGNAGES EN CAROUSEL (11 avis) -->
+    <section id="temoignages" class="container">
+      <h2><i class="fas fa-comment-dots"></i> Ils partagent leur expérience</h2>
+      
+      <div class="carousel-container">
+        <!-- Boutons précédent/suivant -->
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Témoignage précédent"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next" id="nextBtn" aria-label="Témoignage suivant"><i class="fas fa-chevron-right"></i></button>
+        
+        <!-- Piste du carousel -->
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Témoignage 1 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Ma chatte était partie depuis 8 jours. Liza m’a décrit précisément le jardin où elle se cachait. Je l’ai retrouvée le jour même. Une gratitude infinie.”</p>
+              <strong>— Aurélie L.</strong>
+              <span class="testi-type">Animal perdu</span>
+            </div>
+          </div>
+          <!-- Témoignage 2 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“La communication avec mon labrador décédé m’a bouleversée. Il m’a ‘dit’ des choses que lui seul savait. Un vrai cadeau pour mon deuil.”</p>
+              <strong>— Stéphane D.</strong>
+              <span class="testi-type">Deuil / décédé</span>
+            </div>
+          </div>
+          <!-- Témoignage 3 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Mon cheval était stressé au box, il tournait en rond. Après le soin à distance, il était calme, détendu. Incroyable mais vrai.”</p>
+              <strong>— Camille R.</strong>
+              <span class="testi-type">Soin énergétique</span>
+            </div>
+          </div>
+          <!-- Témoignage 4 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Perroquet fugueur retrouvé à 3 km ! Liza m’a guidée vers un parc où il avait été vu. Merci du fond du cœur.”</p>
+              <strong>— Jonathan M.</strong>
+              <span class="testi-type">Animal perdu</span>
+            </div>
+          </div>
+          <!-- Témoignage 5 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Je n’arrivais pas à comprendre pourquoi mon chat devenait agressif. Liza m’a expliqué sa peur du nouveau bébé. Maintenant ils cohabitent paisiblement.”</p>
+              <strong>— Mathilde S.</strong>
+              <span class="testi-type">Communication</span>
+            </div>
+          </div>
+          <!-- Témoignage 6 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Quand mon lapin est parti, j’étais anéantie. Les messages reçus m’ont apporté une paix immense. Merci pour ta douceur Liza.”</p>
+              <strong>— Manon T.</strong>
+              <span class="testi-type">Deuil / décédé</span>
+            </div>
+          </div>
+          <!-- Témoignage 7 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Mon chien avait peur des orages au point de se blesser. Deux soins plus tard, il reste serein quand ça tonne. Changement radical !”</p>
+              <strong>— Vincent P.</strong>
+              <span class="testi-type">Soin énergétique</span>
+            </div>
+          </div>
+          <!-- Témoignage 8 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“J’ai pris le forfait 6h pour mon chat perdu. En 4h j’avais une piste et il était à la maison. Liza est tout simplement connectée.”</p>
+              <strong>— Élodie F.</strong>
+              <span class="testi-type">Animal perdu</span>
+            </div>
+          </div>
+          <!-- Témoignage 9 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Ma jument avait un comportement bizarre. Liza a senti une douleur à l’encolure que le véto a confirmée. Respect infini.”</p>
+              <strong>— Sarah L.</strong>
+              <span class="testi-type">Communication</span>
+            </div>
+          </div>
+          <!-- Témoignage 10 -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“J’ai pu faire la paix avec mon vieux chat parti. Liza transmet avec une justesse incroyable. Je recommande les yeux fermés.”</p>
+              <strong>— Pauline K.</strong>
+              <span class="testi-type">Deuil / décédé</span>
+            </div>
+          </div>
+          <!-- Témoignage 11 (bonus) -->
+          <div class="testi-card">
+            <div class="testi">
+              <i class="fas fa-quote-left"></i>
+              <div class="stars">★★★★★</div>
+              <p>“Perdu mon chien dans les bois, Liza m’a envoyé une image mentale d’un vieux pont. On l’a retrouvé là-bas. Merci !”</p>
+              <strong>— Laurent G.</strong>
+              <span class="testi-type">Animal perdu</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Indicateurs (points) -->
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="a-propos" class="container">
+      <div class="bg-soft-green" style="background-color: #e3eee0; border-radius: clamp(30px, 5vw, 70px); padding: clamp(1.5rem, 4vw, 2.5rem);">
+        <h2>À propos de moi</h2>
+        <div class="apropos-content">
+          <div class="apropos-text">
+            <p><i class="fas fa-paw icon-paw"></i> Passionnée par les animaux depuis l’enfance, j’ai développé une sensibilité naturelle à leurs émotions. Formée à la communication animale intuitive et aux soins énergétiques, j’accompagne avec douceur gardiens et animaux à renouer le dialogue, à traverser le deuil ou à apaiser les tensions.</p>
+            <p><i class="fas fa-paw icon-paw"></i> Ma mission : rétablir le lien d’âme à âme, redonner espoir et réconforter. Chaque animal, qu’il soit physique ou décédé, mérite d’être entendu.</p>
+            <p>✨ Approche bienveillante, sans jugement, respectueuse de votre histoire.</p>
+          </div>
+          <div class="photo-profil" title="Liza – communiquante animale"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container">
+      <h2><i class="fas fa-envelope-open-text"></i> Contact & échange</h2>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <p><i class="fas fa-envelope" style="color:#7d9a79;"></i> lizacommanimal@gmail.com</p>
+          <p><i class="fab fa-whatsapp" style="color:#25D366;"></i> <a href="https://wa.me/33773686025" target="_blank">+33 7 73 68 60 25</a></p>
+          <p><i class="fas fa-clock"></i> Réponse sous 24h en général.</p>
+          <div style="margin-top: 2rem;">
+            <a href="https://wa.me/33773686025" class="btn btn-wa"><i class="fab fa-whatsapp"></i> Écrire sur WhatsApp</a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-container">
+            <h4>Formulaire de contact simple</h4>
+            <form action="https://formsubmit.co/lizacommanimal@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="Contact depuis site web">
+              <input type="hidden" name="_captcha" value="false">
+              <div class="form-group"><input type="text" name="Nom" placeholder="Votre nom" required></div>
+              <div class="form-group"><input type="email" name="Email" placeholder="Votre email" required></div>
+              <div class="form-group"><textarea name="Message" rows="4" placeholder="Votre message..." required></textarea></div>
+              <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Icônes animaux -->
+    <div class="paw-icons">
+      <i class="fas fa-dog"></i> <i class="fas fa-cat"></i> <i class="fas fa-horse"></i> <i class="fas fa-dove"></i> <i class="fas fa-rabbit"></i>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><i class="fas fa-paw"></i> Liza communication animale – lien d’âme à âme <i class="fas fa-paw"></i></p>
+      <p>lizacommanimal@gmail.com | WhatsApp +33 7 73 68 60 25</p>
+      <p class="mention">Sans base de données – vos messages sont envoyés par email de manière confidentielle.</p>
+      <p class="mention">© 2025 – Tous droits réservés – site apaisant et professionnel</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript pour le carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('carouselTrack');
+      const cards = document.querySelectorAll('.testi-card');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+      
+      if (!track || cards.length === 0) return;
+      
+      let currentIndex = 0;
+      const totalCards = cards.length;
+      
+      // Créer les points indicateurs
+      for (let i = 0; i < totalCards; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+      
+      const dots = document.querySelectorAll('.dot');
+      
+      // Fonction pour mettre à jour l'affichage
+      function updateCarousel() {
+        // Défilement fluide
+        const cardWidth = cards[0].offsetWidth;
+        track.scrollTo({
+          left: cardWidth * currentIndex,
+          behavior: 'smooth'
+        });
+        
+        // Mettre à jour les points actifs
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+      
+      // Aller à un slide spécifique
+      function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= totalCards) index = totalCards - 1;
+        currentIndex = index;
+        updateCarousel();
+      }
+      
+      // Slide suivant
+      function nextSlide() {
+        if (currentIndex < totalCards - 1) {
+          currentIndex++;
+        } else {
+          currentIndex = 0; // Retour au début
+        }
+        updateCarousel();
+      }
+      
+      // Slide précédent
+      function prevSlide() {
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          currentIndex = totalCards - 1; // Retour à la fin
+        }
+        updateCarousel();
+      }
+      
+      // Écouteurs d'événements
+      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', nextSlide);
+      
+      // Recalculer la largeur au redimensionnement
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          updateCarousel(); // Recalcule la position sans changer l'index
+        }, 100);
+      });
+      
+      // Initialisation
+      dots[0]?.classList.add('active');
+      
+      // Support tactile (swipe basique)
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      
+      track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 50) {
+          nextSlide(); // Swipe gauche -> suivant
+        } else if (touchEndX > touchStartX + 50) {
+          prevSlide(); // Swipe droite -> précédent
+        }
+      }, { passive: true });
+    });
+  </script>
+</body>
+</html>
